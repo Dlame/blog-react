@@ -5,9 +5,9 @@ import "./mobile.scss";
 // compontents
 import React, { Component } from "react";
 import { Layout, BackTop } from "antd";
-import SliderRight from '../components/slider/slider';
-import Nav from '../components/nav/nav';
-import Index from '../components/home/index';
+import SliderRight from "../components/slider/slider";
+import Nav from "../components/nav/nav";
+import Index from "../components/home/index";
 
 // functions
 import { isMobileOrPc } from "../utils/utils";
@@ -38,22 +38,20 @@ class Layouts extends Component {
       <div className="Layouts">
         {!isIndexPage ? (
           <div>
-            <Nav pathname={this.props.location.pathname} />
             <Layout className="layout">
-              <Content>
-                <Layout style={{ padding: "24px 0", background: "#fff" }}>
-                  <Content style={{ padding: "0 24px 0 0", minHeight: 280 }}>
-                    {this.props.children}
-                  </Content>
-                  {!isShowSlider ? (
-                    ""
-                  ) : (
-                    <Sider width={350} style={{ background: "#fff" }}>
-                      <SliderRight />
-                    </Sider>
-                  )}
-                </Layout>
-              </Content>
+              <Nav pathname={this.props.location.pathname} />
+              <Layout style={{ padding: "24px 0", background: "#fff" }}>
+                <Content style={{ padding: "0 24px 0 0", minHeight: 280 }}>
+                  {this.props.children}
+                </Content>
+                {!isShowSlider ? (
+                  ""
+                ) : (
+                  <Sider width={350} style={{ background: "#fff" }}>
+                    <SliderRight />
+                  </Sider>
+                )}
+              </Layout>
             </Layout>
             <Footer className="layout-footer">
               Daze'blog ©2019 Created by DazeZhang

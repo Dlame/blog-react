@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import "./index.scss";
-// import logo from "../../assets/userLogo.jpeg";
+// import logo from "../../assets/IMG_20180318_233038__01.jpg";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
