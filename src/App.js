@@ -4,6 +4,7 @@ import { ConnectedRouter } from "connected-react-router";
 import { Route, Switch } from "react-router";
 import routers from "./route/index";
 import Layouts from "./views/layout";
+import MySpin from "./components/mySpin/mySpin";
 
 const App = ({ history }) => {
   return (
@@ -20,6 +21,7 @@ const App = ({ history }) => {
           ))}
         </Layouts>
       </Switch>
+      <MySpin />
     </ConnectedRouter>
   );
 };

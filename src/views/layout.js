@@ -41,12 +41,10 @@ class Layouts extends Component {
             <Layout className="layout">
               <Nav pathname={this.props.location.pathname} />
               <Layout style={{ padding: "24px 0", background: "#fff" }}>
-                <Content style={{ padding: "0 24px 0 0", minHeight: 280 }}>
+                <Content style={{ marginTop: "65px", minHeight: 280 }}>
                   {this.props.children}
                 </Content>
-                {!isShowSlider ? (
-                  ""
-                ) : (
+                {isShowSlider && (
                   <Sider width={350} style={{ background: "#fff" }}>
                     <SliderRight />
                   </Sider>

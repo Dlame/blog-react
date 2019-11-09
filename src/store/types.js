@@ -4,6 +4,8 @@
 export const ACTIVE_NAV = 'ACTIVE_NAV';
 export const CURRENT_ANIMATE = 'CURRENT_ANIMATE';
 export const RECEIVE_NAV = 'RECEIVE_NAV';
+export const SHOW_LOADING = "SHOW_LOADING";
+export const HIDE_LOADING = "HIDE_LOADING";
 
 /**
  * action type user

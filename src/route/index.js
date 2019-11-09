@@ -21,6 +21,16 @@ let config = [
       loading: loadingComponent,
       delay: 300
     })
+  },
+  {
+    name: "articles",
+    path: "/articles",
+    exact: true,
+    component: Loadable({
+      loader: () => import("../components/articles/articles"),
+      loading: loadingComponent,
+      delay: 300
+    })
   }
 ];
 

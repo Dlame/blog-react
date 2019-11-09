@@ -275,7 +275,7 @@ class Nav extends Component {
 				) : (
 					<Header className="pc-header">
 						<Row className="container" type="flex" justify="center">
-							<Col span={2} className="container-col">
+							<Col span={1} className="container-col">
 								<div className="logo">
 									<img src={logo} alt="" />
 								</div>

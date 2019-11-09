@@ -1,0 +1,17 @@
+.spin-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(233, 233, 233, 0.5);
+  z-index: 1;
+  .my-spin {
+    position: absolute;
+    top: 49%;
+    left: 49%;
+  }
+}
+.hide {
+  display: none;
+}
