@@ -34,7 +34,7 @@ const lazyload = throttle(() => {
       let hasLaySrc = imgs[i].getAttribute("data-has-lazy-src");
       if (hasLaySrc === "false") {
         imgs[i].src = imgs[i].getAttribute("data-src");
-        imgs[i].setAttribute("data-has-lazy-src", true);
+        imgs[i].setAttribute("data-has-lazy-src", true); 
       }
       // 前 i 张图片已经加载完毕，下次从第 i+1 张开始检查是否露出
       num = i + 1;
@@ -61,7 +61,7 @@ class Articles extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.location.pathname === "/hot") {
       this.setState(
         {

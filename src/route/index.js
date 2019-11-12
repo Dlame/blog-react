@@ -31,6 +31,16 @@ let config = [
       loading: loadingComponent,
       delay: 300
     })
+  },
+  {
+    name: "archive",
+    path: "/archive",
+    exact: true,
+    component: Loadable({
+      loader: () => import("../components/archive/archive"),
+      loading: loadingComponent,
+      delay: 300
+    })
   }
 ];
 
