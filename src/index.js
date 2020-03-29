@@ -1,12 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { AppContainer } from 'react-hot-loader';
+import { Provider as BusProvider } from './hooks/useBus';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// redux
+import { Provider } from 'react-redux';
+import store from './redux';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// styles
+import './assets/iconfont/iconfont';
+import 'normalize.css/normalize.css'; // a modern alternative to CSS resets
+import './styles/index.less';
+
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <BusProvider>
+        <Provider store={store}>
+          <Component />
+        </Provider>
+      </BusProvider>
+    </AppContainer>,
+    document.getElementById('root')
+  );
+};
+
+render(App);
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render(App);
+  });
+}
