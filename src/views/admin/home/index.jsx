@@ -1036,7 +1036,6 @@ class Index extends Component {
       renderPostProcess();
     }
 
-    /////
     function onResize(e) {
       makeCanvasFullScreen(document.getElementById('sakura'));
       setViewports();

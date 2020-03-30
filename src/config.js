@@ -35,7 +35,7 @@ export const DISCUSS_AVATAR = SIDEBAR.avatar; // 评论框博主头像
 
 // 公告 announcement
 export const ANNOUNCEMENT = {
-  enable: true, // 是否开启
+  enable: false, // 是否开启
   content: (
     <>
       由于服务器期限将至 / ssl 证书过期 / 域名过期，请访问

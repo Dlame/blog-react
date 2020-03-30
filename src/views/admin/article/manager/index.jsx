@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Table, Form, Tag, Switch, Input, Button, Popconfirm, Select } from 'antd';
 
@@ -139,10 +139,83 @@ function ArticleManager(props) {
       }
     : null;
 
-  return <div className="admin-article-manager">
-    {/* 检索 */}
-    <Form></Form>
-  </div>;
+  return (
+    <div className="admin-article-manager">
+      {/* 检索 */}
+      <Form layout="inline" onSubmit={handleSubmit} style={{ marginBottom: 20 }}>
+        <Form.Item label="关键词">
+          {getFieldDecorator('keyword')(<Input placeholder="请输入文章关键词" allowClear />)}
+        </Form.Item>
+        <Form.Item label="标签">
+          {getFieldDecorator('tag')(
+            <Select style={{ width: 200 }} allowClear>
+              {tagList.map(item => (
+                <Select.Option key={item.name} value={item.name}>
+                  {item.name}
+                </Select.Option>
+              ))}
+            </Select>
+          )}
+        </Form.Item>
+        <Form.Item label="分类">
+          {getFieldDecorator('category')(
+            <Select style={{ width: 200 }} allowClear>
+              {categoryList.map(item => (
+                <Select.Option key={item.name} value={item.name}>
+                  {item.name}
+                </Select.Option>
+              ))}
+            </Select>
+          )}
+        </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" style={{ marginRight: 8 }}>
+            检索
+          </Button>
+          <Button type="primary" onClick={outputAll} style={{ marginRight: 8 }}>
+            导出全部文章
+          </Button>
+        </Form.Item>
+      </Form>
+      <Table
+        {...tableProps}
+        rowSelection={rowSelection}
+        footer={() => (
+          <>
+            批量操作{' '}
+            <Switch
+              checked={batch}
+              onChange={e => setBatch(prev => !prev)}
+              style={{ marginRight: 8 }}
+            />
+            {batch && (
+              <>
+                <Button
+                  type="primary"
+                  size="small"
+                  style={{ marginRight: 8 }}
+                  disabled={selectedRowKeys.length === 0}
+                  onClick={outputSelected}
+                >
+                  导出选中项
+                </Button>
+                <Popconfirm
+                  title="确定删除文章吗？"
+                  onConfirm={delList}
+                  okText="是"
+                  cancelText="否"
+                >
+                  <Button type="primary" size="small" disabled={selectedRowKeys.length === 0}>
+                    批量删除
+                  </Button>
+                </Popconfirm>
+              </>
+            )}
+          </>
+        )}
+      />
+    </div>
+  );
 }
 
 export default Form.create()(ArticleManager);
