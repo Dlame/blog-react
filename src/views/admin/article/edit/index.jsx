@@ -100,7 +100,7 @@ function Edit(props) {
 							className="title-input"
 							name="title"
 							value={title}
-							onChange={e => setTitle(e.target.title)}
+							onChange={e => setTitle(e.target.value)}
 						/>
 					</span>
 				</li>
@@ -110,8 +110,8 @@ function Edit(props) {
 						<List
 							list={tagList}
 							setList={setTagList}
-							selectedList={cateSelectedList}
-							setSelectedList={setCateSelectedList}
+							selectedList={tagSelectedList}
+							setSelectedList={setTagSelectedList}
 						/>
 					</span>
 				</li>
