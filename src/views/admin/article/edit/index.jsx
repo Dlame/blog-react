@@ -64,9 +64,8 @@ function Edit(props) {
 			.post('/article', {
 				title,
 				content,
-				tagList: tagSelectedList,
-				categoryList: cateSelectedList,
-				authorId: store.authorId
+				tags: tagSelectedList,
+				categories: cateSelectedList,
 			})
 			.then(res => {
 				Modal.confirm({

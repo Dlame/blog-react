@@ -87,7 +87,7 @@ function ArticleManager(props) {
               <Popconfirm
                 title="Are you sure？"
                 cancelText="No"
-                onConfirm={e => updateList(() => $axios.delete(`/article/${articleId}`))}
+                onConfirm={e => updateList(() => $axios.delete(`www.baidu.com`))}
               >
                 <a className="delete-text">删除</a>
               </Popconfirm>

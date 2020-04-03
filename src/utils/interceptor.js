@@ -13,7 +13,7 @@ function createInterceptor(instance) {
     },
     function(error) {
       // Do something with request error
-      message.error('网络错误');
+      message.error('请求超时');
       return Promise.reject(error);
     }
   );
@@ -22,7 +22,7 @@ function createInterceptor(instance) {
   instance.interceptors.response.use(
     function(response) {
       // Do something with response data
-      return response;
+      return response.data;
     },
     function(error) {
       // Do something with response error
