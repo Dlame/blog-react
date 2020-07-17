@@ -108,7 +108,9 @@ module.exports = function(webpackEnv) {
       },
       {
         loader: require.resolve('less-loader'),
-        options: cssOptions
+        options: {
+          javascriptEnabled: true
+        }
       }
     ].filter(Boolean);
     if (preProcessor) {

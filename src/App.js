@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import { useSelector } from 'react-redux';
 
 // config
 import routes from './routes';
@@ -8,7 +8,7 @@ import routes from './routes';
 import CommonComponent from '@/components/common';
 
 function App(props) {
-  const role = useSelector(state => state.user.role);
+  // const role = useSelector(state => state.user.role);
 
   // 解构 route
   const renderRoutes = (routes, contextPath) => {
